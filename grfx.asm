@@ -789,7 +789,7 @@ watch@	jsr	redraw_play
 	clr	in_mode
 	jsr	draw_menu
 	lbra	out@
-p0@	fcn	"PRIVMSG #coco_war :@^"
+p0@	fcn	"PRIVMSG #coco_war_01 :@^"
 	
 
 menu_select
@@ -1250,7 +1250,7 @@ ann@	tst	serverf		; only send string if we're the server
 	jsr	draw_hit_player
 	jsr	hit_oplayer	;
 	bra	col@
-p0@	fcn	"PRIVMSG #coco_war :@$"
+p0@	fcn	"PRIVMSG #coco_war_01 :@$"
 
 
 
@@ -1397,7 +1397,7 @@ nmax@	stb	max@
 	bra	b@
 min@	.db	0
 max@	.db	0
-p0@	fcn	"PRIVMSG #coco_war :@&"	
+p0@	fcn	"PRIVMSG #coco_war_01 :@&"	
 
 quit1
 	ldx	#p0@
@@ -1499,7 +1499,7 @@ b@	ldb	,x+
 	jsr	appCRLF
 	com	rts
 out@	puls	d,x,u,pc	; return
-p0@	fcn	"PRIVMSG #coco_war :@@"
+p0@	fcn	"PRIVMSG #coco_war_01 :@@"
 
 
 
@@ -1798,7 +1798,7 @@ a@	ldx	#p0@
 	jsr	appCRLF
 	jsr	send
 	puls	x,u,pc
-p0@	fcn	"PRIVMSG #coco_war :@!"
+p0@	fcn	"PRIVMSG #coco_war_01 :@!"
 	
 ;;; Open Vport
 DWOpen
@@ -2071,7 +2071,7 @@ a@	sync
 ;;;
 
 gen_privmsg
-	fcn	"PRIVMSG #coco_war :@"
+	fcn	"PRIVMSG #coco_war_01 :@"
 	
 	;; server message commands
 
@@ -2300,7 +2300,7 @@ cwel
 	jsr	send
 	inc	conmode
 	puls	d,x,y,u,pc
-p0@	fcn	"JOIN #coco_war"
+p0@	fcn	"JOIN #coco_war_01"
 p1@	fcn	"OK"
 p2@	fcn	"Joining Channel..."
 
@@ -2715,7 +2715,7 @@ a@	cmpx	me		; is me?
 	clr	me
 	clr	me+1
 	puls	d,x,u,pc
-p0@	fcn	"PRIVMSG #coco_war :@^"
+p0@	fcn	"PRIVMSG #coco_war_01 :@^"
 
 ;;; Called to adjust score of subject player
 ;;;   takes: B = subject player
@@ -2760,7 +2760,7 @@ send_basic
 	jsr	appCRLF		; and CRLF
 	com	rts
 out@	puls	cc,d,x,u,pc
-p0@	fcn	"PRIVMSG #coco_war :@%"
+p0@	fcn	"PRIVMSG #coco_war_01 :@%"
 
 	
 ;;; Get a player struct
